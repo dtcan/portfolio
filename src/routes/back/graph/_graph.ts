@@ -83,7 +83,6 @@ export class Graph implements Background  {
             }
         }
 
-        console.log(this.path.toString());
         this.interpolate = -1.0;
     }
 
