@@ -5,8 +5,10 @@
 	import Nav from '../components/Nav.svelte';
 
 	export let segment: string;
-	let background: Background;
+	let background: Background = new Graph();
 	let canvas: HTMLCanvasElement;
+
+	const REPO_BACKGROUND_LINK = "https://github.com/dtcan/portfolio/tree/master/src/routes/back/"
 
 	function resizeCanvas(): void {
 		canvas.width = window.innerWidth;
@@ -20,7 +22,6 @@
 	}
 
 	onMount((): void => {
-		background = new Graph();
 		requestAnimationFrame(() => loop(new Date().valueOf() / 1000));
 		resizeCanvas();
 	});
@@ -40,7 +41,11 @@
 	main {
 		flex-grow: 1;
 		padding: 2em;
-		margin: 0 0;
+		margin: 0;
+	}
+	footer {
+		padding: 1em;
+		margin: 0;
 	}
 </style>
 
@@ -52,4 +57,7 @@
 	<main>
 		<slot></slot>
 	</main>
+	<footer>
+		Current background: <a target="blank" href={REPO_BACKGROUND_LINK + background.tag}>{background.name}</a>
+	</footer>
 </div>

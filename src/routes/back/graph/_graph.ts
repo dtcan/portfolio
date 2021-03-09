@@ -21,6 +21,9 @@ function toHex(n: number, d: number = 2): string {
 
 export class Graph implements Background  {
 
+    name: string = "Graph";
+    tag: string = "graph";
+
     adj: Array<Array<0 | 1>>;
     path: Array<number>;
     interpolate: number;

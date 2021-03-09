@@ -1,4 +1,6 @@
 export interface Background {
+    name: string
+    tag: string
     draw: (canvas: HTMLCanvasElement, delta: number) => void
 }
 
