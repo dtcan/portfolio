@@ -1,18 +1,17 @@
+<script lang="ts">
+	import TypedText from "../components/TypedText.svelte";
+</script>
 <style>
-	h1, figure, p {
+	h1, p {
 		text-align: center;
 		margin: 0 auto;
 	}
 
 	h1 {
+		font-family: monospace;
 		font-size: 2.8em;
-		text-transform: uppercase;
 		font-weight: 700;
 		margin: 0 0 0.5em 0;
-	}
-
-	figure {
-		margin: 0 0 1em 0;
 	}
 
 	p {
@@ -30,10 +29,6 @@
 	<title>Sapper project template</title>
 </svelte:head>
 
-<h1>Great success!</h1>
+<h1><TypedText text="david canagasabey"></TypedText></h1>
 
-<figure>
-	<figcaption>Have fun with Sapper!</figcaption>
-</figure>
-
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
+<p>Some information about me goes here.</p>
