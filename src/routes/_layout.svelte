@@ -2,10 +2,11 @@
 	import { onMount } from 'svelte';
 	import type { Background } from './back/_base';
 	import { Graph } from './back/graph/_graph';
+	import { Sample } from './back/sample/_sample';
 	import Nav from '../components/Nav.svelte';
 
 	export let segment: string;
-	let background: Background = new Graph();
+	let background: Background = new Sample();
 	let canvas: HTMLCanvasElement;
 	let resized: boolean = false;
 

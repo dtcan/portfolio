@@ -1,0 +1,6 @@
+# Metropolis Sampling
+Uses the Metropolis sampling algorithm to sample from a distribution defined by a greyscale image. Images are taken from the [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) dataset.
+
+An initial sample is taken from a uniform distibution over the unit square. Future samples are taken from a normal distribution centered around the previous sample. To generate the sample, I sample uniformly from the unit square and then use the Box-Mueller transform to transform the sample into a standard normal distribution sample. Then I transform that sample using the previous sample as the mean and the chosen standard deviation (a constant variable at the top of the source code). The new sample is accepted using the ratio of the probabilities of the new sample and the previous sample in the posterior distribution, which is defined by a greyscale image (coordinates are scaled from the unit square to the image's dimensions). The values in the image are not normalized to sum to 1, but this is okay since I am finding the ratio, which is unaffected by a common scaling factor.
+
+It's worth noting that Metropolis sampling is not needed to sample from the image, since sampling from a categorical distribution is tractable, but I use this algorithm here for the purpose of demonstrating it.
