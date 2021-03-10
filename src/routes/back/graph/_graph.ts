@@ -21,7 +21,7 @@ function toHex(n: number, d: number = 2): string {
 
 export class Graph implements Background  {
 
-    name: string = "Graph";
+    name: string = "Connected Graph";
     tag: string = "graph";
 
     adj: Array<Array<0 | 1>>;
