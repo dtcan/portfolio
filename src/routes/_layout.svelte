@@ -7,23 +7,26 @@
 	export let segment: string;
 	let background: Background = new Graph();
 	let canvas: HTMLCanvasElement;
+	let resized: boolean = false;
 
 	const REPO_BACKGROUND_LINK = "https://github.com/dtcan/portfolio/tree/master/src/routes/back/"
 
 	function resizeCanvas(): void {
 		canvas.width = window.innerWidth;
 		canvas.height = window.innerHeight;
+		resized = true;
 	}
 
 	function loop(lastTick: number): void {
     	let time: number = new Date().valueOf() / 1000;
-		background.draw(canvas, time - lastTick);
+		background.draw(canvas, time - lastTick, resized);
+		resized = false;
     	requestAnimationFrame(() => loop(time));
 	}
 
 	onMount((): void => {
-		requestAnimationFrame(() => loop(new Date().valueOf() / 1000));
 		resizeCanvas();
+		requestAnimationFrame(() => loop(new Date().valueOf() / 1000));
 	});
 </script>
 

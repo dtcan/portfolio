@@ -1,7 +1,7 @@
 export interface Background {
     name: string
     tag: string
-    draw: (canvas: HTMLCanvasElement, delta: number) => void
+    draw: (canvas: HTMLCanvasElement, delta: number, resized: boolean) => void
 }
 
 interface UnionFindNode<T> {
