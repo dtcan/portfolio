@@ -1,5 +1,5 @@
 import type { Background } from "../_base";
-import http from 'http';
+import https from 'https';
 import { PNG } from 'pngjs';
 
 const BACKGROUND_COLOUR = "#000000";
@@ -21,7 +21,7 @@ export class Sample implements Background {
     lastSample: [number, number];
 
     constructor() {
-        http.get('https://dtcan.dev/faces/'+(Math.floor(Math.random() * 6))+'.png', res => {
+        https.get('https://dtcan.dev/faces/'+(Math.floor(Math.random() * 6))+'.png', res => {
             const parent: Sample = this;
             res.pipe(new PNG())
             .on('parsed', function() {
