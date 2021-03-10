@@ -1,4 +1,4 @@
-import type { Background } from "../_base";
+import type { Background } from "../base";
 import https from 'https';
 import { PNG } from 'pngjs';
 

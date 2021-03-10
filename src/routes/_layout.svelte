@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { Background } from './back/_base';
-	import { Graph } from './back/graph/_graph';
-	import { Sample } from './back/sample/_sample';
+	import type { Background } from '../back/base';
+	import { Graph } from '../back/graph/graph';
+	import { Sample } from '../back/sample/sample';
 	import Nav from '../components/Nav.svelte';
 
 	export let segment: string;
@@ -10,7 +10,7 @@
 	let canvas: HTMLCanvasElement;
 	let resized: boolean = false;
 
-	const REPO_BACKGROUND_LINK = "https://github.com/dtcan/portfolio/tree/master/src/routes/back/"
+	const REPO_BACKGROUND_LINK = "https://github.com/dtcan/portfolio/tree/master/src/back/"
 
 	function resizeCanvas(): void {
 		canvas.width = window.innerWidth;

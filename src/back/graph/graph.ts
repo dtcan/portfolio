@@ -1,5 +1,5 @@
-import type { Background } from "../_base";
-import { UnionFind } from "../_base";
+import type { Background } from "../base";
+import { UnionFind } from "../base";
 
 
 const SPREAD_RADIUS = 200.0;
