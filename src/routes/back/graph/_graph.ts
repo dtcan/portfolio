@@ -33,26 +33,37 @@ export class Graph implements Background  {
         this.adj = new Array(n).fill(undefined).map(() => new Array(n).fill(0));
 
         let disjoint: UnionFind<null> = new UnionFind<null>(new Array(n).fill(null));
+        let edges: Array<[number,number]> = [];
+        for(let i = 0; i < this.adj.length; i++) {
+            for(let j = i+1; j < this.adj.length; j++) {
+                edges.push([i,j]);
+            }
+        }
+        for(let i = edges.length; i > 1; i--) {
+            let j: number = Math.floor(Math.random() * i);
+            edges.push(edges.splice(j, 1)[0]);
+        }
+
         
         while(true) {
-            let i: number = Math.floor(Math.random() * this.adj.length);
-            let j: number = Math.floor(Math.random() * this.adj.length);
-            if(i != j && this.adj[i][j] == 0) {
-                this.adj[i][j] = 1;
-                this.adj[j][i] = 1;
-                disjoint.union(i, j);
+            let edge: [number, number] = edges.pop();
+            let i: number = edge[0];
+            let j: number = edge[1];
 
-                let parent: number = disjoint.find(0);
-                let disconnect: boolean = false;
-                for(let k = 1; k < this.adj.length; k++) {
-                    if(disjoint.find(k) != parent) {
-                        disconnect = true;
-                        break;
-                    }
-                }
-                if(!disconnect) {
+            this.adj[i][j] = 1;
+            this.adj[j][i] = 1;
+            disjoint.union(i, j);
+
+            let parent: number = disjoint.find(0);
+            let disconnect: boolean = false;
+            for(let k = 1; k < this.adj.length; k++) {
+                if(disjoint.find(k) != parent) {
+                    disconnect = true;
                     break;
                 }
+            }
+            if(!disconnect) {
+                break;
             }
         }
         
