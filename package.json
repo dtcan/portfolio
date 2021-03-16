@@ -22,7 +22,7 @@
     "@types/pngjs": "^6.0.0",
     "@types/polka": "^0.5.1",
     "file-loader": "^6.0.0",
-    "sapper": "^0.28.0",
+    "sapper": "^0.29.1",
     "svelte": "^3.17.3",
     "svelte-check": "^1.0.46",
     "svelte-loader": "^2.9.0",
