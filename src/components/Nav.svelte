@@ -3,21 +3,36 @@
 
 	interface Page {
 		name: string
+		href?: string
+	}
+
+	interface Contact {
+		icon: string
+		text: string
 		href: string
 	}
 
 	const pages: Page[] = [
-		{ name: 'home', href: undefined },
+		{ name: 'home' },
 		{ name: 'about', href: 'about' },
-		{ name: 'blog', href: 'blog' }
-	]
+		{ name: 'projects', href: 'projects' }
+	];
+
+	const contacts: Contact[] = [
+		{ icon: 'email', text: "Email", href: "mailto:david@dtcan.dev" },
+		{ icon: 'github', text: "Github", href: "https://github.com/dtcan" }
+	];
 </script>
 
 <style>
 	nav {
+		display: flex;
 		border-bottom: 1px solid #222;
-		font-weight: 300;
 		padding: 0 1em;
+	}
+
+	#spacer {
+		flex-grow: 1;
 	}
 
 	/*
@@ -58,6 +73,12 @@
 	<ul>
 		{#each pages as page}
 			<li><a aria-current="{segment === page.href ? 'page' : undefined}" href={page.href || '.'} data-text={page.name}>{page.name}</a></li>
+		{/each}
+	</ul>
+	<div id="spacer"></div>
+	<ul>
+		{#each contacts as contact}
+			<li><a target="blank" href={contact.href} title={contact.text}>{contact.icon}</a></li>
 		{/each}
 	</ul>
 </nav>
