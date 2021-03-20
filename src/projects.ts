@@ -42,7 +42,7 @@ export const PROJECTS_LIST: Project[] = [
         repo: 'arithmetic',
         name: "arithmetic",
         tags: ['haskell'],
-        body: "An interpreter for an arithmetic language consisting of natural number, addition, and multiplication. I made this project to learn about parsing "  +
+        body: "An interpreter for an arithmetic language consisting of natural number addition and multiplication. I made this project to learn about parsing "  +
         "and evaluating a formal language. If I return to this project, I'll change the implementation to respect the order of operations."
     },
     {
