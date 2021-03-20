@@ -29,4 +29,4 @@
     onMount(() => setTimeout(type, startDelay * 1000));
 </script>
 
-{displayText+(cursor ? "_" : String.fromCharCode(0x2003))}
+<span>{displayText}</span><span>{cursor ? "_" : String.fromCharCode(0x2003)}</span>
