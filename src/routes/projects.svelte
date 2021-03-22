@@ -52,7 +52,7 @@
 
 {#each PROJECTS_LIST as project, i}
     {#if i > 0}<hr />{/if}
-    <div class="project">
+    <div id={project.repo} class="project">
         {#if project.image}<div>image</div>{/if}
         <div>
             <h2>{project.name}</h2>
