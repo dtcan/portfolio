@@ -6,7 +6,11 @@
 	import Nav from '../components/Nav.svelte';
 
 	export let segment: string;
-	let background: Background = new Sample();
+
+	const BACKGROUNDS = [Graph, Sample];
+	let backgroundClass = BACKGROUNDS[Math.floor(Math.random() * BACKGROUNDS.length)];
+
+	let background: Background = new backgroundClass();
 	let canvas: HTMLCanvasElement;
 	let resized: boolean = false;
 
