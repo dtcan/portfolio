@@ -35,4 +35,8 @@
 	Phone: 647.336.2595<br />
 	Github: <a target="blank" href="https://github.com/dtcan">dtcan</a>
 </p>
-<p><a href="/David Canagasabey Software Engineer Resume.pdf" download>Download Resume</a></p>
+<br />
+<p><small>
+	This website serves the purpose of a resume by providing information on my education and work experience.<br />
+	However, if you are looking for a traditional resume document then you can find that <a href="/David Canagasabey Software Engineer Resume.pdf">here</a>.
+</small></p>
