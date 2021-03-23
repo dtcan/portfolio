@@ -9,6 +9,7 @@
 	const pages: Page[] = [
 		{ name: 'home' },
 		{ name: 'about', href: 'about' },
+		{ name: 'education', href: 'education' },
 		{ name: 'experience', href: 'work' },
 		{ name: 'projects', href: 'projects' }
 	];
