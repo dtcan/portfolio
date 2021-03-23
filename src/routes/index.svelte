@@ -35,3 +35,4 @@
 	Phone: 647.336.2595<br />
 	Github: <a target="blank" href="https://github.com/dtcan">dtcan</a>
 </p>
+<p><a href="/David Canagasabey Software Engineer Resume.pdf" download>Download Resume</a></p>
