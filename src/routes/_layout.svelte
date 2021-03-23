@@ -23,10 +23,16 @@
 	}
 
 	function loop(lastTick: number): void {
-    	let time: number = new Date().valueOf() / 1000;
-		background.draw(canvas, time - lastTick, resized);
-		resized = false;
-    	requestAnimationFrame(() => loop(time));
+		if(background) {
+			let time: number = new Date().valueOf() / 1000;
+			background.draw(canvas, time - lastTick, resized);
+			resized = false;
+			requestAnimationFrame(() => loop(time));
+		}
+	}
+
+	function disableCanvas(): void {
+		background = undefined;
 	}
 
 	onMount((): void => {
@@ -60,12 +66,15 @@
 <svelte:window on:resize={resizeCanvas}></svelte:window>
 
 <div id="content">
-	<canvas id="background" bind:this={canvas}></canvas>
 	<Nav {segment}/>
 	<main>
 		<slot></slot>
 	</main>
+	{#if background}
+	<canvas id="background" bind:this={canvas}></canvas>
 	<footer>
 		Current background: <a target="blank" href={REPO_BACKGROUND_LINK + background.tag}>{background.name}</a>
+		<small>(click <a on:click={disableCanvas} href={segment || "."}>here</a> to disable)</small>
 	</footer>
+	{/if}
 </div>
