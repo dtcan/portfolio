@@ -41,7 +41,7 @@
         <div class="flex-row">
             <h2>{work.title}</h2>
             <div id="spacer"></div>
-            <p>{work.dateRange}</p>
+            <span>{work.dateRange}</span>
         </div>
         <h3><i>{work.employer}</i></h3>
         <ul>
