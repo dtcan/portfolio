@@ -1,5 +1,5 @@
 import type { Background } from "../base";
-import { UnionFind } from "../base";
+import { UnionFind, toHex } from "../base";
 
 
 const SPREAD_RADIUS = 200.0;
@@ -11,13 +11,6 @@ const HIGHLIGHT_COLOUR = "#008800";
 const HIGHLIGHT_LINE_WIDTH = 5;
 const HIGHLIGHT_RADIUS = 5;
 
-function toHex(n: number, d: number = 2): string {
-    let str: string = n.toString(16);
-    while(str.length < d) {
-        str = "0"+str;
-    }
-    return str;
-}
 
 export class Graph implements Background  {
 

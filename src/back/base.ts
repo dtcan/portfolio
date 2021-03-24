@@ -4,6 +4,14 @@ export interface Background {
     draw: (canvas: HTMLCanvasElement, delta: number, resized: boolean) => void
 }
 
+export function toHex(n: number, d: number = 2): string {
+    let str: string = n.toString(16);
+    while(str.length < d) {
+        str = "0"+str;
+    }
+    return str;
+}
+
 interface UnionFindNode<T> {
     value: T
     parent: number
