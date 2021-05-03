@@ -11,4 +11,4 @@ Since I perform 1 union and at most n finds in every iteration, the worst-case r
 
 To find the minimum path between two nodes, I use a breadth-first search, which has a worst-case running time of ![O(n^2)](https://latex.codecogs.com/png.latex?O(n^2)).
 
-If I expand on this visualization, I plan to find more a interesting way of displaying the graph (rather than just a circle), in such a way that can handle a graph with more nodes while still being coherant.
+If I expand on this visualization, I plan to find more a interesting way of displaying the graph (rather than just a circle), in such a way that can handle a graph with more nodes while still being coherent.
