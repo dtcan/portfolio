@@ -8,23 +8,32 @@ export interface Work {
 
 export const WORK_LIST: Work[] = [
     {
+        title: "Backend Developer",
+        employer: "LabMotus Health & Performance Clinic",
+        dateRange: "Jan - Apr 2021",
+        bullets: [
+            "Developed a React application that generates physiological assessments from videos using 3D pose estimation; worked in an Agile team of 7 students as part of a software engineering course",
+            "Integrated AWS microservices (S3, Lambda, DynamoDB) for receiving video uploads, interfacing with pose estimation API, and storing user profiles and assessments",
+            "Set up CI/CD pipeline for automated testing, building, and deployment to development and production environments, allowing development team to efficiently perform updates and find bugs"
+        ]
+    },
+    {
         title: "Full-Stack Developer",
         employer: "MoneyPod.ca",
         dateRange: "2019 – 2020",
         bullets: [
-            "Designed and developed a personal finance planning application for Android and iOS devices (written in HTML and TypeScript using AngularJS and NativeScript)",
-            "Designed and developed a server backend with a database and an API to expose the database to the client (MySQL database, API written in JavaScript using Node.js and Express, authenticates using JSON Web Tokens)",
-            "Communicated with the employer to determine product specifications and give updates on development progress"
+            "Developed a personal finance planning application for Android and iOS devices, made using AngularJS and NativeScript",
+            "Developed a server backend with a relational database and a RESTful API, providing a convenient user experience while maintaining anonymity of personal data",
+            "Communicated with the employer to determine product specifications and give updates on development progress, resulting in an efficient workflow"
         ],
         website: "https://moneypod.ca"
     },
     {
-        title: "Director, Vacation Bible School",
+        title: "Camp Director",
         employer: "Richmond Hill Pentecostal Church",
         dateRange: "2017 – 2018",
         bullets: [
-            "Involved in directing summer kids camp; prepared curriculum and decorations, resulting in a successful and enjoyable camp",
-            "Prepared and executed activities, ensuring that lessons were understood and enjoyed by participants",
+            "Organized a summer kids camp in a team of 7 directors; prepared curriculum and decorations, resulting in a successful and enjoyable camp",
             "Supervised volunteers and children during camp activities, ensuring safety of participants and that volunteers understood and performed their job effectively"
         ]
     }
