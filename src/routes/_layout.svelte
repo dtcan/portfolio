@@ -3,11 +3,12 @@
 	import type { Background } from '../back/base';
 	import { Graph } from '../back/graph/graph';
 	import { Sample } from '../back/sample/sample';
+	import { Planets } from '../back/planet/planet';
 	import Nav from '../components/Nav.svelte';
 
 	export let segment: string;
 
-	const BACKGROUNDS = [Graph, Sample];
+	const BACKGROUNDS = [Graph, Sample, Planets];
 	let backgroundClass = BACKGROUNDS[Math.floor(Math.random() * BACKGROUNDS.length)];
 
 	let background: Background = new backgroundClass();
@@ -25,7 +26,7 @@
 	function loop(lastTick: number): void {
 		if(background) {
 			let time: number = new Date().valueOf() / 1000;
-			background.draw(canvas, time - lastTick, resized);
+			background.draw(canvas, Math.min(1.0, time - lastTick), resized);
 			resized = false;
 			requestAnimationFrame(() => loop(time));
 		}
