@@ -25,8 +25,7 @@ export const WORK_LIST: Work[] = [
             "Developed a personal finance planning application for Android and iOS devices, made using AngularJS and NativeScript",
             "Developed a server backend with a relational database and a RESTful API, providing a convenient user experience while maintaining anonymity of personal data",
             "Communicated with the employer to determine product specifications and give updates on development progress, resulting in an efficient workflow"
-        ],
-        website: "https://moneypod.ca"
+        ]
     },
     {
         title: "Camp Director",
